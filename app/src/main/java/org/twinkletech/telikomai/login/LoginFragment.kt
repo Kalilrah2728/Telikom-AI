@@ -51,7 +51,7 @@ class LoginFragment : Fragment() {
             return
         }
 
-        Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
         findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
 
     }

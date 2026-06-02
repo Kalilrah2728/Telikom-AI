@@ -23,10 +23,54 @@
         <action
             android:id="@+id/action_dashboardFragment_to_AIAssistantFragment"
             app:destination="@id/AIAssistantFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_myAccountFragment"
+            app:destination="@id/myAccountFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_plansFragment"
+            app:destination="@id/plansFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_topupFragment"
+            app:destination="@id/topupFragment" />
     </fragment>
     <fragment
         android:id="@+id/AIAssistantFragment"
         android:name="org.twinkletech.telikomai.assistants.AIAssistantFragment"
         android:label="fragment_a_i_assistant"
-        tools:layout="@layout/fragment_a_i_assistant" />
+        tools:layout="@layout/fragment_a_i_assistant" >
+        <action
+            android:id="@+id/action_AIAssistantFragment_to_plansFragment"
+            app:destination="@id/plansFragment" />
+        <action
+            android:id="@+id/action_AIAssistantFragment_to_topupFragment"
+            app:destination="@id/topupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="org.twinkletech.telikomai.myaccount.MyAccountFragment"
+        android:label="fragment_my_account"
+        tools:layout="@layout/fragment_my_account" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="org.twinkletech.telikomai.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/plansFragment"
+        android:name="org.twinkletech.telikomai.plans.PlansFragment"
+        android:label="fragment_plans"
+        tools:layout="@layout/fragment_plans" />
+    <fragment
+        android:id="@+id/topupFragment"
+        android:name="org.twinkletech.telikomai.topup.TopupFragment"
+        android:label="fragment_topup"
+        tools:layout="@layout/fragment_topup" />
+    <fragment
+        android:id="@+id/whatsAppFragment"
+        android:name="org.twinkletech.telikomai.whatsappfragment.WhatsAppFragment"
+        android:label="fragment_whats_app"
+        tools:layout="@layout/fragment_whats_app" />
 </navigation>

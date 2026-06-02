@@ -57,7 +57,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="HDFC Bank Ltd"
+                        android:text="Telikom AI Assistant"
                         android:textColor="#111B21"
                         android:textSize="18sp"
                         android:textStyle="bold" />

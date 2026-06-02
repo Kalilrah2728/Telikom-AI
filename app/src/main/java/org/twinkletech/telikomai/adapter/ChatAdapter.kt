@@ -1,15 +1,18 @@
 package org.twinkletech.telikomai.adapter
 
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import org.twinkletech.telikomai.R
-import org.twinkletech.telikomai.assistants.model.ChatMessage
+import org.twinkletech.telikomai.model.ChatMessage
 
 class ChatAdapter(
-    private val messages: MutableList<ChatMessage>
+    private val messages: MutableList<ChatMessage>,
+    private val onButtonClick: (String) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -28,17 +31,25 @@ class ChatAdapter(
 
         return if (viewType == USER) {
 
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_user_message, parent, false)
-
-            UserViewHolder(view)
+            UserViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(
+                        R.layout.item_user_message,
+                        parent,
+                        false
+                    )
+            )
 
         } else {
 
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_bot_message, parent, false)
-
-            BotViewHolder(view)
+            BotViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(
+                        R.layout.item_bot_message,
+                        parent,
+                        false
+                    )
+            )
         }
     }
 
@@ -46,34 +57,44 @@ class ChatAdapter(
         holder: RecyclerView.ViewHolder,
         position: Int
     ) {
-
         val item = messages[position]
-
-        when (holder) {
-
-            is UserViewHolder -> {
-                holder.txtMessage.text = item.message
-            }
-
+        when(holder){
+            is UserViewHolder -> { holder.questionMessages.text = item.message }
             is BotViewHolder -> {
-                holder.txtMessage.text = item.message
+                holder.txtMessage.text = Html.fromHtml(item.message, Html.FROM_HTML_MODE_LEGACY)
+                if (item.isTyping) {
+                    val animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.blink)
+                    holder.txtMessage.startAnimation(animation)
+                    holder.btnAction.visibility = View.GONE
+
+                } else {
+                    holder.txtMessage.clearAnimation()
+                    if (item.buttons.isNotEmpty()) {
+                        holder.btnAction.visibility = View.VISIBLE
+                        holder.btnAction.text = item.buttons.first().title
+                        holder.btnAction.setOnClickListener { onButtonClick(item.buttons.first().action) }
+                    } else {
+                        holder.btnAction.visibility = View.GONE
+                    }
+                }
             }
         }
     }
 
-    override fun getItemCount(): Int = messages.size
+    override fun getItemCount() = messages.size
 
-    class UserViewHolder(view: View) :
-        RecyclerView.ViewHolder(view) {
+    class UserViewHolder(view: View)
+        : RecyclerView.ViewHolder(view){
 
-        val txtMessage: TextView =
-            view.findViewById(R.id.txtUserMessage)
+        val questionMessages: TextView =
+            view.findViewById(R.id.txtUserMessages)
     }
 
-    class BotViewHolder(view: View) :
-        RecyclerView.ViewHolder(view) {
+    class BotViewHolder(view: View)
+        : RecyclerView.ViewHolder(view){
 
-        val txtMessage: TextView =
-            view.findViewById(R.id.txtBotMessage)
+        val txtMessage: TextView = view.findViewById(R.id.txtBotMessage)
+
+        val btnAction: TextView = view.findViewById(R.id.btnAction)
     }
 }
