@@ -158,4 +158,5 @@
     <string name="enter_otp_without_colon">Enter OTP</string>
     <string name="telikom_ai_assistant">Telikom AI assistant</string>
     <string name="ask_anything_about_your_account">Ask anything about your account...</string>
+    <string name="voice_message">Voice Message</string>
 </resources>
