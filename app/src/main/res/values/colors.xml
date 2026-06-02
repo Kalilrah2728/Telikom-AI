@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="blackText">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="day_white_dark_light">#FFFFFFFF</color>
+    <color name="day_white_dark_black">#FFFFFFFF</color>
+    <color name="vodafone_red">#ed1d23</color>
+    <color name="tpng_blue">#00b0ca</color>
+    <color name="grey_new">#666666</color>
+    <color name="theme_blue">#009DDE</color>
+    <color name="blue">#824791</color>
+    <color name="grey">#666666</color>
+    <color name="lightGreen">#e7ebb5</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="orange">#ff6c00</color>
+    <color name="blue_text">#3F3F99</color>
+    <color name="red">#B40404</color>
+    <color name="alert_green">#e4e8b1</color>
+    <color name="gray_new">#f4f4f4</color>
+    <color name="cyan">#FF00ccff</color>
+    <color name="full">#ffffff</color>
+    <color name="list_child_even">#e5e8b2</color>
+    <color name="list_child_odd">#d3d97f</color>
+    <color name="green_btn_default">#a8b538</color>
+    <color name="green_btn_pressed">#f2fd96</color>
+    <color name="footer_blue">#00b0ca</color>
+    <color name="mint_green">#98FB98</color>
+    <color name="mint_green_light">#D8FFD8</color>
+    <color name="new_text_color">#7e7f61</color>
+</resources>
