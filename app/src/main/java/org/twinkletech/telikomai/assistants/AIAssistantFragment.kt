@@ -106,12 +106,12 @@ class AIAssistantFragment : Fragment() {
 
                 "NEWS" -> {
                     // Navigate Topup Fragment
-                    //findNavController().navigate(R.id.action_AIAssistantFragment_to_plansFragment)
+                    findNavController().navigate(R.id.action_AIAssistantFragment_to_newsFragment)
                 }
 
                 "STORE_LOCATION" -> {
                     // Navigate Topup Fragment
-                    //findNavController().navigate(R.id.action_AIAssistantFragment_to_plansFragment)
+                    findNavController().navigate(R.id.action_AIAssistantFragment_to_storeLocaterFragment)
                 }
             }
         }
@@ -300,7 +300,7 @@ class AIAssistantFragment : Fragment() {
                 typingPosition
             )
             addBotMessage(response)
-        }, 3000)
+        }, 1500)
     }
 
     private fun speak(response: ChatResponse) {
@@ -311,34 +311,6 @@ class AIAssistantFragment : Fragment() {
             null
         )
     }
-
-    private val qaMap = hashMapOf(
-
-        "what is my balance" to
-                """
-            Here are your balances:
-            675-770-66066 K1.09
-            675-770-66065 K3.70
-            675-327-0800 Postpaid
-            Balance expiry 11 Jan 2025
-            """.trimIndent(),
-
-        "what plan suits me best" to
-                """
-            Based on your usage:
-            K10 - 5GB - 7 Days
-            Best value for your data pattern.
-            """.trimIndent(),
-
-        "show my offers" to
-                """
-            Available Offers:
-            10GB for K20
-            Free WhatsApp
-            Night Bundle
-            """.trimIndent()
-    )
-
 
     private fun addUserMessage(message: String) {
         messageList.add(
@@ -367,65 +339,5 @@ class AIAssistantFragment : Fragment() {
         textToSpeech.stop()
         textToSpeech.shutdown()
         super.onDestroyView()
-    }
-
-    private fun findAnswer(
-        question: String
-    ): String {
-
-        return when {
-
-            question.contains(
-                "balance",
-                true
-            ) -> {
-
-                """
-            Here are your balances:
-
-            675-770-66066 K1.09
-
-            675-770-66065 K3.70
-
-            675-327-0800 Postpaid
-
-            Balance expiry:
-            11 Jan 2025
-            """.trimIndent()
-            }
-
-            question.contains(
-                "plan",
-                true
-            ) -> {
-
-                """
-            Based on your usage:
-
-            K10 - 5GB - 7 Days
-
-            Best value for your data pattern.
-            """.trimIndent()
-            }
-
-            question.contains(
-                "offer",
-                true
-            ) -> {
-
-                """
-            Special Offers:
-
-            10GB for K20
-
-            Unlimited WhatsApp
-
-            Free Night Data
-            """.trimIndent()
-            }
-
-            else ->
-                "Sorry, I couldn't understand that."
-        }
     }
 }

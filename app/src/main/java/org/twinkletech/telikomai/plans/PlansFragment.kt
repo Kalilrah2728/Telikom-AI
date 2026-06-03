@@ -5,56 +5,88 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.selfcaretelikomaidemoscreen.Plan
 import org.twinkletech.telikomai.R
+import org.twinkletech.telikomai.databinding.FragmentPlansBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PlansFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PlansFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var binding: FragmentPlansBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_plans, container, false)
+        binding = FragmentPlansBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PlansFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PlansFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupSpinner()
+        setupRecyclerView()
+    }
+
+    private fun setupSpinner() {
+        val subscriptionNumbers = listOf(
+            "675-770-66066",
+            "675-880-77123",
+            "675-991-33456"
+        )
+
+        val adapter = ArrayAdapter(
+            requireActivity(),
+            R.layout.spinner_item_selected,
+            subscriptionNumbers
+        ).apply {
+            setDropDownViewResource(R.layout.spinner_item_dropdown)
+        }
+
+        binding.spinnerSubscription.adapter = adapter
+
+        binding.spinnerSubscription.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+
                 }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {}
             }
     }
+
+    private fun setupRecyclerView() {
+        val plans = listOf(
+            Plan("K1 Night Data", "1GB valid for 1 day", "K 1"),
+            Plan("K3, 1GB – 1 Day", "1GB valid for 1 day", "K 3"),
+            Plan("CM K5 Data Plan", "2GB valid for 30 days", "K 5"),
+            Plan("K10 Weekend Pack", "5GB valid for 3 days", "K 10"),
+            Plan("K15 Weekly Data", "8GB valid for 7 days", "K 15"),
+            Plan("K25 Fortnight", "15GB valid for 14 days", "K 25"),
+            Plan("K50 Monthly", "30GB valid for 30 days", "K 50"),
+            Plan("K5 Social Pack", "Unlimited Facebook/WhatsApp 7 days", "K 5"),
+        )
+
+        val adapter = PlansAdapter(plans) { plan ->
+            Toast.makeText(requireContext(), "Selected: ${plan.name}", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.recyclerPlans.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerPlans.adapter = adapter
+        binding.recyclerPlans.isNestedScrollingEnabled = false
+    }
+
 }

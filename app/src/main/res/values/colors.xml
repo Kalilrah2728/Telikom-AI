@@ -28,4 +28,143 @@
     <color name="mint_green">#98FB98</color>
     <color name="mint_green_light">#D8FFD8</color>
     <color name="new_text_color">#7e7f61</color>
+
+    <color name="ic_launcher_background">#FFFFFF</color>
+
+    <!-- ── Core palette ── -->
+
+    <!-- Main screen background — deep navy blue -->
+    <color name="bg_main">#1A2E5A</color>
+
+    <!-- Bottom nav bar — slightly darker navy -->
+    <color name="bg_bottom_nav">#162550</color>
+
+    <!-- Card backgrounds -->
+    <!-- WARNING: muted purple/plum -->
+    <color name="card_warning_bg">#3D2B5E</color>
+    <!-- ALERT: rich teal/green -->
+    <color name="card_alert_bg">#1B5E4A</color>
+    <!-- PROMO: dark navy (slightly lighter than main bg) -->
+    <color name="card_promo_bg">#1E3A6E</color>
+
+    <!-- Subtle border overlays on cards (10% white) -->
+    <color name="card_border">#1AFFFFFF</color>
+
+    <!-- App icon background (semi-transparent white circle) -->
+    <color name="app_icon_bg">#33FFFFFF</color>
+
+    <!-- Text colours -->
+    <color name="text_date">#A8BCD8</color>
+    <color name="text_time">#A8BCD8</color>
+    <color name="text_body">#D0DFF0</color>
+
+    <!-- Button fills -->
+    <!-- Primary white button (WARNING card) -->
+    <color name="btn_primary_white">#FFFFFF</color>
+    <!-- Primary green button (ALERT card) -->
+    <color name="btn_primary_green">#2ECC71</color>
+    <!-- Primary yellow/orange button (PROMO card) -->
+    <color name="btn_primary_yellow">#F39C12</color>
+
+    <!-- Secondary dismiss button (translucent white) -->
+    <color name="btn_secondary_bg">#33FFFFFF</color>
+
+    <!-- Button label dark text (on white / yellow buttons) -->
+    <color name="btn_text_dark">#1A2E5A</color>
+
+
+    <!-- Primary blue (toolbar + header gradient + card headers) -->
+    <color name="blue_primary">#1565C0</color>
+    <color name="blue_dark">#0D47A1</color>
+    <color name="blue_light">#1E88E5</color>
+
+    <!-- Background -->
+    <color name="bg_screen">#F0F4FA</color>
+
+    <!-- Header greeting card -->
+    <color name="header_bg_start">#1565C0</color>
+    <color name="header_bg_end">#1976D2</color>
+
+    <!-- Offer cards -->
+    <color name="card_bg">#FFFFFF</color>
+    <color name="card_header_bg">#1565C0</color>
+
+    <!-- "Picked for you" badge -->
+    <color name="badge_green">#2E7D32</color>
+
+    <!-- Offer title teal/cyan -->
+    <color name="offer_title_cyan">#0097A7</color>
+
+    <!-- Expires label -->
+    <color name="expires_red">#C62828</color>
+
+    <!-- CTA button -->
+    <color name="cta_bg">#FFFFFF</color>
+    <color name="cta_text">#1A1A1A</color>
+    <color name="cta_border">#BDBDBD</color>
+
+    <!-- Quick action icons -->
+    <color name="quick_icon_bg">#E3F2FD</color>
+    <color name="quick_icon_tint">#1565C0</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#555555</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_hint">#9E9E9E</color>
+
+    <!-- Bottom nav -->
+    <color name="bottom_nav_bg">#1565C0</color>
+
+    <!-- Toolbar icon circle -->
+    <color name="toolbar_icon_circle">#FFFFFF</color>
+    <color name="toolbar_icon_color">#1565C0</color>
+
+    <!-- Divider -->
+    <color name="divider">#E0E0E0</color>
+
+
+    <color name="blue_card_bg">#1A3A7A</color>
+
+    <!-- Tab -->
+    <color name="tab_active_bg">#4CAF50</color>
+    <color name="tab_inactive_text">#888888</color>
+    <color name="tab_bar_bg">#F0F0F0</color>
+
+
+    <!-- Subscription number field -->
+    <color name="input_bg">#FFFFFF</color>
+    <color name="input_border">#1565C0</color>
+    <color name="input_text">#1A1A1A</color>
+    <color name="input_hint">#9E9E9E</color>
+    <color name="input_label">#555555</color>
+
+    <!-- Recommended card -->
+    <color name="recommended_header_bg">#1A3A7A</color>
+    <color name="recommended_border">#1565C0</color>
+    <color name="ai_badge_bg">#4CAF50</color>
+
+    <!-- Plan item inside recommended card -->
+    <color name="plan_item_bg">#FFFFFF</color>
+    <color name="plan_item_border">#4CAF50</color>
+    <color name="plan_title_blue">#1565C0</color>
+    <color name="plan_price_blue">#1565C0</color>
+    <color name="plan_match_color">#4CAF50</color>
+    <color name="plan_value_color">#555555</color>
+
+
+    <!-- All plans list -->
+    <color name="all_plans_bg">#F0EDE0</color>
+    <color name="all_plans_divider">#DDDDDD</color>
+    <color name="all_plans_title">#1A1A1A</color>
+    <color name="all_plans_subtitle">#777777</color>
+    <color name="all_plans_price">#555555</color>
+    <color name="all_plans_header_text">#666666</color>
+
+
+    <!-- Dropdown popup -->
+    <color name="dropdown_bg">#FFFFFF</color>
+    <color name="dropdown_item_hover">#E3F2FD</color>
+    <color name="dropdown_selected">#1565C0</color>
+
 </resources>

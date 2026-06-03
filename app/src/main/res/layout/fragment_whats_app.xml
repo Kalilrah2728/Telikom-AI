@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/whatsapp"
+        android:background="@drawable/whatsappicon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,15 +41,13 @@
 
                 <!-- Circular Profile Image Placeholder -->
                 <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/chatbot" />
+                    android:layout_width="@dimen/dp_45"
+                    android:layout_height="45dp"
+                    android:background="@drawable/app_playstore" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
@@ -82,7 +80,7 @@
 
         <!-- Chat History List -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewChat"
+            android:id="@+id/chatRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:clipToPadding="false"
@@ -125,6 +123,7 @@
                     app:tint="#667781" />
 
                 <EditText
+                    android:id="@+id/messageBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -147,20 +146,26 @@
                     app:tint="#667781" />
 
                 <ImageView
+                    android:id="@+id/camera"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/photo_camera"
+                    android:src="@drawable/mic_bold"
                     app:tint="#667781" />
             </LinearLayout>
 
             <!-- Floating Mic Send Action Button -->
-            <ImageButton
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+            <ImageView
+                android:id="@+id/sendBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
                 android:background="@drawable/bg_circle_green"
-                android:contentDescription="@string/voice_message"
-                app:srcCompat="@drawable/mic_bold"
-                app:tint="#FFFFFF" />
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cardView"
+                app:srcCompat="@drawable/ic_send"
+                app:tint="@color/white" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

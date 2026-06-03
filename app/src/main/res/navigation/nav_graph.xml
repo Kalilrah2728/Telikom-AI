@@ -35,6 +35,12 @@
         <action
             android:id="@+id/action_dashboardFragment_to_topupFragment"
             app:destination="@id/topupFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_whatsAppFragment"
+            app:destination="@id/whatsAppFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_storeLocaterFragment"
+            app:destination="@id/storeLocaterFragment" />
     </fragment>
     <fragment
         android:id="@+id/AIAssistantFragment"
@@ -47,22 +53,43 @@
         <action
             android:id="@+id/action_AIAssistantFragment_to_topupFragment"
             app:destination="@id/topupFragment" />
+        <action
+            android:id="@+id/action_AIAssistantFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_AIAssistantFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_AIAssistantFragment_to_storeLocaterFragment"
+            app:destination="@id/storeLocaterFragment" />
     </fragment>
     <fragment
         android:id="@+id/myAccountFragment"
         android:name="org.twinkletech.telikomai.myaccount.MyAccountFragment"
         android:label="fragment_my_account"
-        tools:layout="@layout/fragment_my_account" />
+        tools:layout="@layout/fragment_my_account" >
+        <action
+            android:id="@+id/action_myAccountFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
     <fragment
         android:id="@+id/notificationFragment"
         android:name="org.twinkletech.telikomai.notification.NotificationFragment"
         android:label="fragment_notification"
-        tools:layout="@layout/fragment_notification" />
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_notificationFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
     <fragment
         android:id="@+id/plansFragment"
         android:name="org.twinkletech.telikomai.plans.PlansFragment"
         android:label="fragment_plans"
-        tools:layout="@layout/fragment_plans" />
+        tools:layout="@layout/fragment_plans" >
+        <action
+            android:id="@+id/action_plansFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
     <fragment
         android:id="@+id/topupFragment"
         android:name="org.twinkletech.telikomai.topup.TopupFragment"
@@ -72,5 +99,39 @@
         android:id="@+id/whatsAppFragment"
         android:name="org.twinkletech.telikomai.whatsappfragment.WhatsAppFragment"
         android:label="fragment_whats_app"
-        tools:layout="@layout/fragment_whats_app" />
+        tools:layout="@layout/fragment_whats_app" >
+        <action
+            android:id="@+id/action_whatsAppFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_whatsAppFragment_to_plansFragment"
+            app:destination="@id/plansFragment" />
+        <action
+            android:id="@+id/action_whatsAppFragment_to_topupFragment"
+            app:destination="@id/topupFragment" />
+        <action
+            android:id="@+id/action_whatsAppFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_whatsAppFragment_to_storeLocaterFragment"
+            app:destination="@id/storeLocaterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="org.twinkletech.telikomai.news.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeLocaterFragment"
+        android:name="org.twinkletech.telikomai.store.StoreLocaterFragment"
+        android:label="fragment_store_locater"
+        tools:layout="@layout/fragment_store_locater" >
+        <action
+            android:id="@+id/action_storeLocaterFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
 </navigation>

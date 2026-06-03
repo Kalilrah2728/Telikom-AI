@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- spinner_item_selected.xml — what shows inside the input field -->
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="0dp"
+    android:paddingEnd="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    android:textSize="15sp"
+    android:textColor="@color/input_text"
+    android:fontFamily="sans-serif"
+    android:gravity="center_vertical"
+    android:singleLine="true" />

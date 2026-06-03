@@ -117,7 +117,7 @@
     <string name="bsp_pay">BSP Pay</string>
 
 
-    <string name="my_insights">My insights</string>
+    <string name="my_insights">My Insights</string>
     <string name="menu_icon">Menu Icon</string>
     <string name="monthly_spending_kina">Monthly spending (Kina)</string>
     <string name="_675_770_66066">675-770-66066</string>
@@ -165,4 +165,5 @@
     <string name="ask_anything_about_your_account">Ask anything about your account...</string>
     <string name="voice_message">Voice Message</string>
     <string name="notification">Notification</string>
+    <string name="notifications">Notifications</string>
 </resources>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_notification_card.xml -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp">
+
+    <!--
+        cardRoot is the coloured rounded panel.
+        Its background drawable is swapped per CardType in the adapter.
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card_warning"
+        android:padding="16dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <!-- ── App icon placeholder ── -->
+        <ImageView
+            android:id="@+id/ivAppIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_app_icon"
+            android:src="@drawable/ic_telikom_logo"
+            android:scaleType="centerInside"
+            android:padding="6dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- ── App label ── -->
+        <TextView
+            android:id="@+id/tvAppLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Telikom Selfcare"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/ivAppIcon"
+            app:layout_constraintTop_toTopOf="@id/ivAppIcon"
+            app:layout_constraintBottom_toBottomOf="@id/ivAppIcon"
+            app:layout_constraintEnd_toStartOf="@id/tvTime" />
+
+        <!-- ── Time label ── -->
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/text_time"
+            app:layout_constraintTop_toTopOf="@id/ivAppIcon"
+            app:layout_constraintBottom_toBottomOf="@id/ivAppIcon"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- ── Title ── -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/ivAppIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- ── Message body ── -->
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/text_body"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- ── Button row ── -->
+        <LinearLayout
+            android:id="@+id/btnRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toBottomOf="@id/tvMessage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Primary action button (colour set in adapter) -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPrimary"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:textSize="13sp"
+                android:letterSpacing="0.01"
+                android:background="@drawable/alert_dilog_box"
+                android:stateListAnimator="@null" />
+
+            <!-- Secondary / dismiss button -->
+            <Button
+                android:id="@+id/btnSecondary"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_btn_secondary"
+                android:layout_marginStart="10dp"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

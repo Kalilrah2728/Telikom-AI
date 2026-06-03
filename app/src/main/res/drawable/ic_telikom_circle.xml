@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    <!-- Outer white circle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,2 A14,14 0 1,1 15.9999,2 Z" />
+    <!-- Blue T letter -->
+    <path
+        android:fillColor="@color/blue_primary"
+        android:pathData="M9,10 H23 V13 H19 V22 H13 V13 H9 Z" />
+</vector>

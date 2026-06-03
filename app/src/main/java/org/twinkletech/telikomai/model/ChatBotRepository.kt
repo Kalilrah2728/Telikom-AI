@@ -128,7 +128,9 @@ object ChatBotRepository {
                         02/06/2026 18:11:38
 
                         Amount:
-                        K50
+                        K50<br>
+                        
+                        Would you like to topup now? Click
                     """.trimIndent(),
 
                     buttons = listOf(

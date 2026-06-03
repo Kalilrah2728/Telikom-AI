@@ -30,5 +30,35 @@ class DashboardFragment : Fragment() {
             findNavController().navigate(R.id.action_dashboardFragment_to_AIAssistantFragment)
 
         }
+
+        binding.myPlan.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_plansFragment)
+
+        }
+
+        binding.topup.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_topupFragment)
+
+        }
+
+        binding.imageViewNoti.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_notificationFragment)
+
+        }
+
+        binding.myAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_myAccountFragment)
+
+        }
+
+        binding.updateProfile.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_whatsAppFragment)
+
+        }
+
+        binding.specials.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_storeLocaterFragment)
+
+        }
     }
 }
