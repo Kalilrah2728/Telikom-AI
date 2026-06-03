@@ -117,6 +117,11 @@
     <string name="bsp_pay">BSP Pay</string>
 
 
+    <string name="my_insights">My insights</string>
+    <string name="menu_icon">Menu Icon</string>
+    <string name="monthly_spending_kina">Monthly spending (Kina)</string>
+    <string name="_675_770_66066">675-770-66066</string>
+
     <string name="click_here_to_know_more_about_bsp_pay">&lt;a href=https://selfcare.bmobile.com.pg/images/BSP_Pay_about.jpg&gt;Click here to know more about BSP PAY&lt;/a&gt;</string>
     <string name="voucher_number">Voucher Number</string>
     <string name="credit_transfer">Credit Transfer</string>
