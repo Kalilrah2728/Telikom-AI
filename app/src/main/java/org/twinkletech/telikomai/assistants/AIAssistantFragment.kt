@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.navigation.fragment.findNavController
@@ -241,6 +242,10 @@ class AIAssistantFragment : Fragment() {
                 }
             }
         )
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_AIAssistantFragment_to_dashboardFragment)
+        }
 
     }
 

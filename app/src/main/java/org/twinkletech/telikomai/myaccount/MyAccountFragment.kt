@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.activity.addCallback
+import androidx.navigation.fragment.findNavController
 import org.twinkletech.telikomai.R
 import org.twinkletech.telikomai.databinding.FragmentMyAccountBinding
 import org.twinkletech.telikomai.databinding.FragmentTopupBinding
@@ -28,7 +30,9 @@ class MyAccountFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupSpinner()
-
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_myAccountFragment_to_dashboardFragment)
+        }
 
     }
 

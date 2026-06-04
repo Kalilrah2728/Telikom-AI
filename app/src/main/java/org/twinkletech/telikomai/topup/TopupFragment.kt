@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.activity.addCallback
+import androidx.navigation.fragment.findNavController
 import org.twinkletech.telikomai.R
 import org.twinkletech.telikomai.databinding.FragmentAIAssistantBinding
 import org.twinkletech.telikomai.databinding.FragmentTopupBinding
@@ -31,6 +33,9 @@ class TopupFragment : Fragment() {
 
         setupSpinner()
 
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_topupFragment_to_dashboardFragment)
+        }
     }
 
     private fun setupSpinner() {

@@ -9,6 +9,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.activity.addCallback
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.selfcaretelikomaidemoscreen.Plan
@@ -34,6 +36,10 @@ class PlansFragment : Fragment() {
 
         setupSpinner()
         setupRecyclerView()
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_plansFragment_to_dashboardFragment)
+        }
     }
 
     private fun setupSpinner() {

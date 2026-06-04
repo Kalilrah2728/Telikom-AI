@@ -10,7 +10,10 @@ import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import org.twinkletech.telikomai.R
 import org.twinkletech.telikomai.databinding.FragmentNewsBinding
 
 class NewsFragment : Fragment() {
@@ -57,6 +60,10 @@ class NewsFragment : Fragment() {
         binding.webView.webChromeClient = WebChromeClient()
 
         binding.webView.loadUrl("https://www.telikom.com.pg/media/news/")
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_newsFragment_to_dashboardFragment)
+        }
     }
 
     override fun onDestroyView() {

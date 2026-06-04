@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.activity.addCallback
+import androidx.navigation.fragment.findNavController
 import org.twinkletech.telikomai.R
 import org.twinkletech.telikomai.databinding.FragmentNewsBinding
 import org.twinkletech.telikomai.databinding.FragmentStoreLocaterBinding
@@ -59,6 +61,10 @@ class StoreLocaterFragment : Fragment() {
         binding.webView.webChromeClient = WebChromeClient()
 
         binding.webView.loadUrl("https://www.telikom.com.pg/locations/retail/")
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_storeLocaterFragment_to_dashboardFragment)
+        }
     }
 
     override fun onDestroyView() {
